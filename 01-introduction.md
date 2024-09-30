@@ -141,7 +141,7 @@ git config --global user.email "ここにGitHubのメールアドレス"
 
 <!-- _class: lead -->
 
-## 1-1. Web の仕組み
+## 1-2. Web の仕組み
 
 ---
 
@@ -266,7 +266,7 @@ git config --global user.email "ここにGitHubのメールアドレス"
 
 ---
 
-### 主に使うタグ
+### おもに使うタグ
 
 | タグ                      | 説明                                       |
 | ------------------------- | ------------------------------------------ |
@@ -352,7 +352,6 @@ git config --global user.email "ここにGitHubのメールアドレス"
 - `index.html`の`body`タグ内に以下のコードを追加
 
 <div style="display: flex;">
-
 <div style="width: 50%">
 
 ```html
@@ -377,7 +376,6 @@ git config --global user.email "ここにGitHubのメールアドレス"
 ```
 
 </div>
-
 <div>
 
 - `table`は表を表現
@@ -392,6 +390,29 @@ git config --global user.email "ここにGitHubのメールアドレス"
 
 ---
 
+### 補足: タグのネスト
+
+- これまでの例にもあったように、タグは入れ子にすることができる
+- 例えば、リストの中にリストを入れることもできる
+
+```html
+<ul>
+  <li>リスト1</li>
+  <li>
+    リスト2
+    <ul>
+      <li>リスト2-1</li>
+      <li>リスト2-2</li>
+    </ul>
+  </li>
+</ul>
+```
+
+- ただし、許容されていない組み合わせもあるので注意
+  - 例えば、`a`タグの中に`a`タグを入れたり、`p`タグの中に`div`タグを入れたりするのは避ける
+
+---
+
 <!-- _class: lead -->
 
 ## 1-3. CSS とは
@@ -401,6 +422,7 @@ git config --global user.email "ここにGitHubのメールアドレス"
 ### CSS とは
 
 - Cascading Style Sheets
+  - スタイルシート言語
 - 文書のデザインを記述するための言語
 - セレクタとプロパティを使ってデザインを記述
 
@@ -411,11 +433,322 @@ git config --global user.email "ここにGitHubのメールアドレス"
 ```css
 h1 {
   color: red;
+  font-size: 32px;
 }
 p {
-  font-size: 16px;
+  background-color: lightgray;
+  text-align: center;
 }
 ```
+
+- `セレクタ { プロパティ: 値; }`の形式で記述
+- セレクタはタグ名や id、class など
+
+---
+
+### h1 タグの文字色を変えてみよう
+
+- `style.css`というファイルを作成
+
+<div style="display: flex; gap: 2rem;">
+<div style="width: 50%">
+
+- `index.html`を以下のようにする
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ページのタイトル</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>見出し</h1>
+    <p>段落</p>
+  </body>
+</html>
+```
+
+</div>
+<div>
+
+- `style.css`に以下のコードを書き込む
+
+```css
+h1 {
+  color: red;
+}
+```
+
+</div>
+</div>
+
+- `head`タグ内に`<link rel="stylesheet" href="./ファイル名.css" />`を追加することで CSS ファイルを読み込むことができる
+
+---
+
+### id と class
+
+- id はページ内で一意の要素を指定するための属性
+  - 1 ページで 1 回しか使うことができない
+- class は複数の要素に同じスタイルを適用するための属性
+  - 複数の要素に同じスタイルを適用したい場合に使う
+
+```html
+<h1 id="title">文字色が赤になる</h1>
+<p class="description">ここの背景がグレーになる</p>
+```
+
+```css
+#title {
+  color: red;
+}
+.description {
+  background-color: lightgray;
+}
+```
+
+- CSS では名前の前に、 id は`#`、class は`.`をつける
+- バグを防ぐため id は使わず class を使うことが多い
+
+---
+
+### 詳細度
+
+```html
+<h1 id="title_id" class="title_class">見出し</h1>
+```
+
+```css
+#title_id {
+  color: blue;
+}
+.title_class {
+  color: green;
+}
+h1 {
+  color: red;
+}
+```
+
+このとき、見出しは何色になる？
+
+---
+
+### 詳細度
+
+- 複数のセレクタが同じ要素を指定している場合、詳細度が高いものが優先される
+- 基本的には最後に書かれたスタイルが優先されるが、詳細度によっては逆転する場合がある
+- 基本的に id セレクタ > class セレクタ > タイプセレクタ の順に詳細度が高い
+
+<div class="alert">
+実際のところ詳細度の計算はより複雑で、CSSが難しいとされる理由の一つだったりします。
+</div>
+
+---
+
+### おもに使うプロパティ ①
+
+| プロパティ名       | 説明             |
+| ------------------ | ---------------- |
+| `color`            | 文字色を変更     |
+| `background-color` | 背景色を変更     |
+| `font-size`        | 文字サイズを変更 |
+| `padding`          |                  |
+| `margin`           |                  |
+| `border`           | 枠線に関する設定 |
+
+---
+
+### padding と margin
+
+- padding は要素の内側の隙間、margin は要素の外側の隙間
+
+```html
+<div>一つ前の要素</div>
+<div class="target">要素</div>
+<div>一つ後の要素</div>
+```
+
+<div style="display: flex; justify-content: space-between;">
+<div style="width: 30%">
+
+- 何も指定しないとき
+
+```css
+// 見やすさのため色は設定
+.target {
+  background-color: red;
+  color: white;
+}
+```
+
+![](./images/no-padding-margin.png)
+
+</div>
+<div style="width: 30%">
+
+- padding だけ指定したとき
+
+```css
+.target {
+  background-color: red;
+  color: white;
+  padding: 16px;
+}
+```
+
+![](./images/with-padding.png)
+
+</div>
+<div style="width: 30%">
+
+- margin だけ指定したとき
+
+```css
+.target {
+  background-color: red;
+  color: white;
+  margin: 16px;
+}
+```
+
+![](./images/with-margin.png)
+
+</div>
+</div>
+
+---
+
+### 色に関するプロパティ
+
+- `color`、`background-color` など
+- 指定方法はさまざま
+  - キーワード: `red`, `blue`, `green` など
+  - RGB: `rgb(255, 0, 0)`
+  - HEX(いわゆるカラーコード): `#ff0000`
+  - HSL: `hsl(0, 100%, 50%)`
+
+<div class="alert">
+色に困ったときはMaterial Colorsなどのカラーパレットサイトを使うと便利です。
+
+https://materialui.co/colors
+
+</div>
+
+---
+
+### 数値を扱うプロパティ
+
+- `px` ピクセル
+- `%` パーセント
+- `em` 親要素のフォントサイズに対する相対的な大きさ
+  - `1em` は親要素のフォントサイズと同じ
+- `rem` ルート要素のフォントサイズに対する相対的な大きさ
+  - `1rem` は`<html>`タグのフォントサイズと同じ
+
+最初は`px`を使うことが多いが、レスポンシブデザインを考えると`%`や`rem`を使うことも多い
+
+---
+
+### 枠線をつける
+
+- `border: 線の太さ 線の種類 線の色`で指定できる
+
+```css
+.target {
+  border: 1px solid black;
+}
+```
+
+- 線の種類
+  - `solid`: 実線
+  - `dotted`: 点線
+  - `dashed`: 破線
+  - `double`: 二重線
+  - `none`: 線なし
+
+---
+
+### 疑似要素
+
+- `::before`、`::after` などの疑似要素を使うことで、要素の前後に要素を追加できる
+- メリットとしては HTML を変えることなく装飾を加えることができる
+- 実際には`content`の値を空にして、`<div>`タグのように装飾することが多い
+
+<div style="display: flex; justify-content: space-between;">
+<div style="width: 60%; margin-top: 2rem;">
+
+```html
+<div class="target">要素</div>
+```
+
+```css
+.target::before {
+  content: "前";
+  background-color: red;
+}
+.target::after {
+  content: "後";
+  background-color: red;
+}
+```
+
+</div>
+<div>
+
+![](./images/css-before.png)
+
+<div>
+
+---
+
+### 実例: 見出しのデザイン
+
+<div style="display: flex; justify-content: space-between; margin-top: 1rem;">
+<div style="width:68%;">
+
+```css
+h1 {
+  position: relative;
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  color: white;
+  background: linear-gradient(to bottom right, blue, pink);
+  border-radius: 1.5rem;
+}
+h1::before,
+h1::after {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background-color: white;
+}
+```
+
+</div>
+<div style="width: 30%;">
+
+```css
+h1::before {
+  top: -1.5rem;
+  left: -1.5rem;
+}
+h1::after {
+  bottom: -1.5rem;
+  right: -1.5rem;
+}
+```
+
+![](./images/css-example.png)
+
+</div>
+</div>
 
 ---
 
@@ -428,23 +761,3 @@ p {
 ### GitHub Pages とは
 
 - GitHub が提供する静的 Web ホスティングサービス
-
----
-
-### GitHub アカウントを作成
-
-1. [GitHub](https://github.com/) にアクセス
-2. `Sign up` からアカウントを作成
-3. メールアドレスの確認
-
----
-
-### Git をインストール
-
-1. [Git](https://git-scm.com/) にアクセス
-2. OS に合わせてインストーラをダウンロード
-3. インストール
-
-```
-
-```
