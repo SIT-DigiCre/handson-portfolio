@@ -15,6 +15,8 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 ### このセクションのゴール
 
+- 環境構築を完了する
+- Web サイトの基本的な構造を理解する
 - HTML/CSS が書けるようになる
 - GitHub Pages で公開できるようになる
 
@@ -23,7 +25,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 ### 目次
 
 1. 準備
-1. Web サイトの仕組み
+1. 最低限必要な知識
 1. HTML とは
 1. CSS とは
 1. GitHub Pages での公開
@@ -32,7 +34,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 <!-- _class: lead -->
 
-## 1-1. 準備
+## 01-1. 準備
 
 ---
 
@@ -99,7 +101,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 ### Git の設定
 
-- スタートメニューから Git Bash を起動
+- スタートメニュー(左下 Windows アイコン)から Git Bash を起動
   - Mac の場合は「アプリケーション」の「ユーティリティ」フォルダにあるターミナルを起動
 - 下記のコマンドを入力して、ユーザ名とメールアドレスを設定
 
@@ -141,11 +143,30 @@ git config --global user.email "ここにGitHubのメールアドレス"
 
 <!-- _class: lead -->
 
-## 1-2. Web の仕組み
+## 1-2. 最低限必要な知識
 
 ---
 
-### Web ページが表示されるまで
+### 心構え
+
+#### 書き方を覚えようとしないでください。
+
+量が膨大というのもありますが、特に Web 技術は日々進化しているため、数年前の常識が通用しないことがあります。個人的には写経(サンプルコードを書き写すこと)にも意味がないと思っているので、どんどんコピペしてください。
+
+そもそもこれはテストではないので、「勉強」という意識を持たないほうがラクです。
+
+---
+
+### 心構え
+
+#### 書き方を覚えるのではなく、調べ方を覚えてください。
+
+詰まったときは信頼できるドキュメントを見るのが一番ですが、英語であることが多いので、ハードルを感じる場合は以下に挙げるサイトがおすすめです。
+
+- [MDN Web Docs](https://developer.mozilla.org/ja/)
+- [HTML&CSS 入門：イチから Web デザインを習得する講座](https://saruwakakun.com/html-css/basic)
+
+ChatGPT や GitHub Copilot などの生成 AI を活用するのも良いでしょう。
 
 ---
 
@@ -158,11 +179,15 @@ git config --global user.email "ここにGitHubのメールアドレス"
 - JavaScript: 動的な挙動を記述
   - 「ボタンをクリックしたらローディングアニメーションを表示」など
 
+ウェブページを開いたときに表示されているのは殆どの場合 HTML です。
+
+基本的に CSS や JavaScript は HTML から呼び出されることが多いです。
+
 ---
 
 <!-- _class: lead -->
 
-## 1-2. HTML とは
+## 01-3. HTML とは
 
 ---
 
@@ -173,14 +198,11 @@ git config --global user.email "ここにGitHubのメールアドレス"
 - 文書の構造を記述するための言語
 - タグで囲まれた要素を使って構造を表現
 
----
+<div class="alert">
 
-<!-- _class: invert -->
+**HTML5**は 2014 年 10 月に W3C によって勧告された HTML のバージョン。2021 年 1 月に廃止され、以降は **HTML Living Standard** が有効な規格となっている
 
-### HTML5 と HTML
-
-- **HTML5**は 2014 年 10 月に W3C によって勧告された HTML のバージョン
-- 2021 年 1 月に廃止され、以降は **HTML Living Standard** が有効な規格となっている
+</div>
 
 ---
 
@@ -194,7 +216,7 @@ git config --global user.email "ここにGitHubのメールアドレス"
     <title>ページのタイトル</title>
   </head>
   <body>
-     <!-- これはコメントで、実際には表示されません -->
+    <!-- これはコメントで、実際には表示されません -->
     <h1>見出し</h1>
     <p>段落</p>
   </body>
@@ -415,7 +437,7 @@ git config --global user.email "ここにGitHubのメールアドレス"
 
 <!-- _class: lead -->
 
-## 1-3. CSS とは
+## 01-4. CSS とは
 
 ---
 
@@ -754,10 +776,42 @@ h1::after {
 
 <!-- _class: lead -->
 
-## 1-4. GitHub Pages での公開
+## 01-5. GitHub Pages での公開
 
 ---
 
 ### GitHub Pages とは
 
 - GitHub が提供する静的 Web ホスティングサービス
+- 以前はレンタルサーバーを契約し、FTP クライアントなどを使って公開したいファイルをアップロードする必要があったが、近年は Git でソースコードを管理し、GitHub に push するだけで Web サイトを公開できるサービスが増えてきた
+- 同様の他のサービスとしては Netlify や Vercel, Firebase Hosting, Cloudflare Pages などがある(いずれも無料で公開可能)
+
+---
+
+### Git と GitHub の違い
+
+- **Git**はプログラムのバージョンを管理するための**ソフトウェア**
+- **GitHub**は Git で管理されたプログラムをクラウド上で管理するための**Web サービス**
+  - 同様の Web サービスとして GitLab, Bitbucket などもある
+- GitHub は Git の機能に加え、Issue(プロジェクトの問題やタスク) を管理する機能や共同開発を支援する機能などを提供している
+- GitHub Pages は GitHub が提供するサービスの一つ
+
+---
+
+### GitHub でリポジトリを作成する
+
+- リポジトリ: 一つのプロジェクトのこと
+  - `repository`自体は Git の用語
+- GitHub にログインし、右上の「+」をクリックして「New repository」を選択
+- Repository name にはお好きなものを
+  - ウェブサイトのドメインと同じ名前にすると分かりやすい: `username.github.io`
+  - ユーザー名のみは推奨しない
+- Public/Private は自由
+  - 認証情報などを載せないよう注意！
+- Create repository をクリック
+
+![bg right fit](./images/github-new-repository.png)
+
+---
+
+### GitHub Pages で公開する
