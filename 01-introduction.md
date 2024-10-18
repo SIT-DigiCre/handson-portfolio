@@ -9,7 +9,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 <!-- _class: lead -->
 
-# 1. 基本編
+# 1. 導入編
 
 ---
 
@@ -135,7 +135,7 @@ git config --global user.email "ここにGitHubのメールアドレス"
 #### 拡張機能のインストール
 
 - VSCode を起動し、左側のアイコンから拡張機能を検索
-- 「HTML CSS Support」をインストール
+- 「HTML CSS Support」と「Live Server」をインストール
 
 ![bg right fit](./images/vscode-extension.png)
 
@@ -344,6 +344,9 @@ ChatGPT や GitHub Copilot などの生成 AI を活用するのも良いでし�
 ```html
 <img src="./your-image-name.png" alt="画像の説明文" />
 ```
+
+- 必ず`alt`属性をつけること
+  - 画像が表示できない場合に代替テキストとして表示される
 
 ---
 
@@ -742,7 +745,6 @@ https://materialui.co/colors
 
 ```css
 h1 {
-  position: relative;
   font-size: 3rem;
   text-align: center;
   padding: 1rem;
@@ -751,35 +753,21 @@ h1 {
   background: linear-gradient(to bottom right, blue, pink);
   border-radius: 1.5rem;
 }
-h1::before,
-h1::after {
-  content: "";
-  position: absolute;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 9999px;
-  background-color: white;
-}
 ```
 
 </div>
 <div style="width: 30%;">
 
-```css
-h1::before {
-  top: -1.5rem;
-  left: -1.5rem;
-}
-h1::after {
-  bottom: -1.5rem;
-  right: -1.5rem;
-}
-```
-
 ![](./images/css-example.png)
 
 </div>
 </div>
+
+- `text-align: center`で中央揃え
+- `linear-gradient`でグラデーションを作成
+  - 角度、起点の色、終点の色を指定
+  - 詳細は[linear-gradient() - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/gradient/linear-gradient)を参照
+- `border-radius`で角を丸く
 
 ---
 
@@ -859,5 +847,7 @@ git push origin main
 ![h:350px](./images/check-ghpages.png)
 
 ---
+
+<!-- _class: lead -->
 
 第 1 回の内容は以上です。お疲れ様でした！
