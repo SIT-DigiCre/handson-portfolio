@@ -197,6 +197,8 @@ ChatGPT や GitHub Copilot などの生成 AI を活用するのも良いでし�
   - 「マークアップ言語」であって「プログラミング言語」ではない
 - 文書の構造を記述するための言語
 - タグで囲まれた要素を使って構造を表現
+- `index.html`というファイル名に特別な意味を持つ
+  - `https://example.com/index.html`へのアクセスは`https://example.com/`と同じ
 
 <div class="alert">
 
@@ -223,6 +225,8 @@ ChatGPT や GitHub Copilot などの生成 AI を活用するのも良いでし�
 </html>
 ```
 
+これだけで表示することができる！
+
 ---
 
 ### HTML の基本的なルール
@@ -233,17 +237,18 @@ ChatGPT や GitHub Copilot などの生成 AI を活用するのも良いでし�
 - Python などとは異なり、インデントの大きさは問わない
 - コメントは`<!--`と`-->`で囲む
 - 1 行目の`<!DOCTYPE html>`は 必ず書く
-- `<html>`タグの中に`<head>`と`<body>`がある
+- `<html>`タグの中に`<head>`と`<body>`がある（この 3 つは必須）
 - `<head>`タグの中にはページの情報を書く
-- `<body>`タグの中にはページの内容を書く。ページを開いた時に表示されるのはこの部分
+- `<body>`タグの中にはページの内容を書く
+  - ページを開いた時に表示されるのはこの部分
 
 ---
 
 ### HTML ファイルを作成してみよう
 
-1. 作業用のフォルダを作成する
+1. 作業用のフォルダ（`portfolio`など）を作成
 1. VSCode を起動し、左上の「ファイル」→「フォルダを開く」から作成したフォルダを開く
-1. 左側のファイルが表示されるエリアから新しいファイルを作成するアイコンをクリック
+1. 新しいファイルを作成（右図の赤丸）
 1. ファイル名を`index.html`として保存
 
 - フォルダ作成ボタンと間違えないように注意
@@ -271,8 +276,8 @@ ChatGPT や GitHub Copilot などの生成 AI を活用するのも良いでし�
 </html>
 ```
 
-- ファイルを保存し、VSCode 上で右クリックして「Reveal in Explorer」を選択
-- ファイルをダブルクリックしてブラウザで開く
+- ファイルを保存し、VSCode 右下の「Go Live」をクリック
+  - エクスプローラーから HTML ファイルをダブルクリックすることでも表示できますが、この方法を用いることでリアルタイムで（再読込することなく）変更を確認できます
 
 ---
 
@@ -536,7 +541,7 @@ h1 {
 
 ---
 
-### 詳細度
+### 詳細度 ①
 
 ```html
 <h1 id="title_id" class="title_class">見出し</h1>
@@ -558,7 +563,7 @@ h1 {
 
 ---
 
-### 詳細度
+### 詳細度 ②
 
 - 複数のセレクタが同じ要素を指定している場合、詳細度が高いものが優先される
 - 基本的には最後に書かれたスタイルが優先されるが、詳細度によっては逆転する場合がある
@@ -599,7 +604,7 @@ h1 {
 - 何も指定しないとき
 
 ```css
-// 見やすさのため色は設定
+// 見やすさのため色のみ設定
 .target {
   background-color: red;
   color: white;
@@ -670,7 +675,11 @@ https://materialui.co/colors
 - `rem` ルート要素のフォントサイズに対する相対的な大きさ
   - `1rem` は`<html>`タグのフォントサイズと同じ
 
-最初は`px`を使うことが多いが、レスポンシブデザインを考えると`%`や`rem`を使うことも多い
+最初は`px`を使っても良いが、レスポンシブデザインを考えると`%`や`rem`を使うほうが良い
+
+<div class="alert">
+レスポンシブデザイン：デバイスの画面サイズに合わせて（パソコンやスマホに応じて）デザインを変えること
+</div>
 
 ---
 
@@ -783,8 +792,8 @@ h1::after {
 ### GitHub Pages とは
 
 - GitHub が提供する静的 Web ホスティングサービス
-- 以前はレンタルサーバーを契約し、FTP クライアントなどを使って公開したいファイルをアップロードする必要があったが、近年は Git でソースコードを管理し、GitHub に push するだけで Web サイトを公開できるサービスが増えてきた
-- 同様の他のサービスとしては Netlify や Vercel, Firebase Hosting, Cloudflare Pages などがある(いずれも無料で公開可能)
+- 以前はレンタルサーバーを契約し、FTP クライアントなどを使って公開したいファイルをアップロードする必要があったが、近年は Git でソースコードを管理し、GitHub に push するだけで Web サイトを公開できるサービスが増えている
+- 同様の他のサービスとしては Netlify や Vercel, Firebase Hosting, Cloudflare Pages などがある（いずれも無料で公開可能）
 
 ---
 
@@ -800,18 +809,55 @@ h1::after {
 
 ### GitHub でリポジトリを作成する
 
-- リポジトリ: 一つのプロジェクトのこと
-  - `repository`自体は Git の用語
-- GitHub にログインし、右上の「+」をクリックして「New repository」を選択
+- [GitHub にログインし、右上の「+」をクリックして「New repository」を選択](https://github.com/new)
 - Repository name にはお好きなものを
-  - ウェブサイトのドメインと同じ名前にすると分かりやすい: `username.github.io`
-  - ユーザー名のみは推奨しない
+  - `https://username.github.io/[ここがリポジトリ名になる]/`
 - Public/Private は自由
-  - 認証情報などを載せないよう注意！
+  - 認証情報を載せないよう注意！
 - Create repository をクリック
+- 作成後に遷移したページの URL をコピー
 
 ![bg right fit](./images/github-new-repository.png)
 
 ---
 
+### Git でコミット＆プッシュする
+
+- VSCode 左上のメニューから「ターミナル」→「新しいターミナル」を選択
+- 以下のコマンドを入力
+
+```bash
+git init
+git add .
+git commit -m "first commit"
+git remote add origin さっきコピーしたURL
+git push origin main
+```
+
+- コマンドは 1 行ずつ実行（Enter）
+- 最後のコマンドに失敗する場合、`main`を`master`に変更
+- いまのところコマンドの意味を理解する必要はありません！
+
+---
+
 ### GitHub Pages で公開する
+
+- コマンド実行後、GitHub で開いているページをリロード
+- 「Settings」→「Pages」を選択
+- Branch を main（または master） にして Save
+
+![h:350px](./images/ghpages-settings.png)
+
+---
+
+### 公開できたことを確認
+
+- Code タブに戻り、黄色い丸が緑のチェックマークになるまで待つ
+  - 30 秒程度でリロードしてみてください
+- 右下の Deployments の github-pages をクリックし、URL をクリック！
+
+![h:350px](./images/check-ghpages.png)
+
+---
+
+第 1 回の内容は以上です。お疲れ様でした！
