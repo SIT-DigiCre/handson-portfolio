@@ -7,9 +7,15 @@ paginate: true
 footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 ---
 
-<!-- _class: lead -->
+<!-- _class: invert -->
+
+# ポートフォリオサイトを作ろう
 
 # 2. 実践編
+
+Author: newt ( [@newt239](https://newt239.dev/) )
+
+Last Edited: 2024/10/19
 
 ---
 
@@ -241,7 +247,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 - Open Graph Protocol の略
 - Facebook が提唱したメタデータの一つ
-- SNS にシェア時に表示されるタイトル、画像、説明文などを指定できる
+- SNS にシェアした時に表示されるタイトル、画像、説明文などを指定できる
 
 <div style="display: flex; gap: 1rem;">
 
@@ -448,6 +454,31 @@ button:click {
   transform: scale(1.1);
 }
 ```
+
+---
+
+### アイコンを活用する
+
+- フリーで利用できるアイコンセットが多く公開されているため、アクセントとして活用すると良い
+- 大量に使う場合は CDN を利用する方法もあるが、SVG ファイルをダウンロードし`img`タグで読み込むのがラク
+
+#### 有名なアイコンセット
+
+- [Font Awesome](https://fontawesome.com/search?o=r&m=free)
+- [Material Icons](https://material.io/resources/icons/)
+- [Lucide](https://lucide.dev/icons/)
+- [Phosphor](https://phosphoricons.com/)
+
+---
+
+### ファビコンを設定する
+
+- ブラウザのタブに表示される小さなアイコン
+- OS やブラウザによって表示されるサイズが異なるため、複数のサイズのアイコンを用意する必要がある
+- 以下の記事が非常に分かりやすい
+  - [ずぼらな私の 2023 年のファビコン事情（SVG でダークモード対応）](https://zenn.dev/bissy/articles/27c5c09a83b27dce11ff)
+
+![](./images/favicon.png)
 
 ---
 
