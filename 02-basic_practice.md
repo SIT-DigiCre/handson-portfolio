@@ -17,7 +17,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 - HTML/CSS に慣れる
 - 実用的なデザインを作れるようになる
-- サイトに簡単な動きをつける
+- サイト訪問者を増やすための工夫を知る
 
 ---
 
@@ -28,6 +28,8 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 1. レスポンシブデザイン
 1. SNS で注目してもらうための工夫
 1. アクセス解析の導入
+1. 開発者ツールを使いこなそう
+1. ユーザーフレンドリーなサイトを作るために
 
 ---
 
@@ -316,3 +318,41 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 ### Google Analytics の導入方法
 
 1. [Google Analytics](https://analytics.google.com/)にアクセス
+1. 新しいプロパティを作成し、トラッキング ID （`G-`から始まるもの）を取得
+1. head タグ内に以下のタグを追加
+
+```html
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=トラッキングID"
+></script>
+```
+
+```html
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "トラッキングID");
+</script>
+```
+
+---
+
+### 導入時の注意点
+
+- トラッキング ID はサイトごとに別のものを使う
+- 反映に時間がかかることがある
+- 導入できたか確認するために[Google Analytics Debugger](https://chromewebstore.google.com/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna)という拡張機能を使うと良い
+
+---
+
+<!-- _class: lead -->
+
+## 02-6. 開発者ツールを使いこなそう
+
+---
+
+### ブラウザの開発者ツールを起動
