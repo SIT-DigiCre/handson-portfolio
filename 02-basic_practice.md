@@ -9,7 +9,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 <!-- _class: lead -->
 
-# 1. 実践編
+# 2. 実践編
 
 ---
 
@@ -26,8 +26,8 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 1. flexbox について
 1. `position` プロパティについて
 1. レスポンシブデザイン
-1. JavaScript
-1. カルーセルを実装する
+1. SNS で注目してもらうための工夫
+1. アクセス解析の導入
 
 ---
 
@@ -92,7 +92,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 }
 ```
 
-- このあたりは良質な記事がたくさん出ているので、そちらを読んだほうが分かりやすいと思います......
+- このあたりは良質な記事がたくさん出ているので、そちらを読んだほうが分かりやすいと思います
   - [日本語対応！CSS Flexbox のチートシートを作ったので配布します | Web クリエイターボックス](https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet)
   - [Flexbox 入門 - 横並びを実現する定番の CSS - ICS MEDIA](https://ics.media/entry/13117/)
 
@@ -151,3 +151,168 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
   - 要素の重なり順を指定。大きいほど手前に表示される
 
 ![bg right](./images/fixed-header.png)
+
+---
+
+<!-- _class: lead -->
+
+## 02-3. レスポンシブデザイン
+
+---
+
+### レスポンシブデザインとは
+
+- 画面サイズに応じてデザインを変更すること
+- モバイルファースト（スマホサイトを優先して作る）が主流
+- CSS のメディアクエリという機能を使って実装する
+- 必ず head タグ内に`<meta name="viewport" content="width=device-width, initial-scale=1.0">`を記述しておくこと
+
+---
+
+### メディアクエリ
+
+```css
+/* 例：画面幅が 600px 以下の時 */
+@media screen and (600px <= width) {
+  /* ここにスタイルを記述 */
+}
+```
+
+- `screen`：通常の画面表示用
+  - 他に印刷時用の`print`や音声読み上げ用の`speech`などがある（滅多に使わない）
+- `600px <= width`：画面幅が 600px 以下の時
+  - このスコープ内に書かれたスタイルは、画面幅が 600px 以下の時のみ適用される
+  - 従来は`max-width: 600px`と書く必要があったが、最近この記法が導入され、`600px <= width < 900px`のような範囲指定も可能に
+
+---
+
+### 実装例：レスポンシブなナビゲーション
+
+- https://gist.github.com/newt239/7
+-
+
+![bg right w:100%](./images/responsive-nav.png)
+
+---
+
+<!-- _class: lead -->
+
+## 02-4. SNS で注目してもらうための工夫
+
+---
+
+### OGP とは
+
+- Open Graph Protocol の略
+- Facebook が提唱したメタデータの一つ
+- SNS にシェア時に表示されるタイトル、画像、説明文などを指定できる
+
+<div style="display: flex; gap: 1rem;">
+
+![h:400px](./images/ogp-twitter.png)
+
+<div style="margin: 1rem;">
+
+![h:250px](./images/ogp-discord.png)
+
+</div>
+<div style="margin: 1rem;">
+
+![h:250px](./images/ogp-line.jpg)
+
+</div>
+
+</div>
+
+---
+
+### OGP の設定方法
+
+- head タグ内に以下のタグを追加
+
+```html
+<meta name="description" content="newt239's portfolio site" />
+<meta property="og:title" content="newt239.dev" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="newt239.dev" />
+<meta property="og:description" content="newt239's portfolio site" />
+<meta property="og:image" content="https://newt239.dev/og-image.webp" />
+<meta property="og:url" content="https://newt239.dev" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="newt239.dev" />
+<meta property="twitter:description" content="newt239's portfolio site" />
+<meta property="twitter:image" content="https://newt239.dev/og-image.webp" />
+<meta property="twitter:site" content="@newt239" />
+<meta property="twitter:creator" content="@newt239" />
+<meta property="twitter:domain" content="newt239.dev" />
+```
+
+---
+
+### 各タグの意味
+
+| プロパティ       | 説明                                                                                                                                                                                    |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `description`    | ページの説明文。Google の検索結果でページタイトルの下に表示される文章だが、設定されていなければ Google が適当な分を抽出してくれるので、中身のない文を書くよりは設定しないほうが良いかも |
+| `og:title`       | ページタイトル。`<title>`タグと同じものを書くことが多い                                                                                                                                 |
+| `og:type`        | コンテンツの種類。`website`で Web サイトのトップページ、`article`で記事ページ等                                                                                                         |
+| `og:site_name`   | サイト名                                                                                                                                                                                |
+| `og:description` | 説明文。`description`と同じ                                                                                                                                                             |
+| `og:image`       | サムネイル画像                                                                                                                                                                          |
+| `og:url`         | サイトの URL                                                                                                                                                                            |
+
+---
+
+### Twitter 用の設定
+
+| プロパティ            | 説明                                                             |
+| --------------------- | ---------------------------------------------------------------- |
+| `twitter:title`       | ページタイトル                                                   |
+| `twitter:description` | 説明文                                                           |
+| `twitter:image`       | サムネイル画像                                                   |
+| `twitter:card`        | Twitter カードの種類。`summary`か`summary_large_image`を指定する |
+| `twitter:site`        | サイトの Twitter ID                                              |
+| `twitter:creator`     | 作成者の Twitter ID                                              |
+| `twitter:domain`      | ドメイン                                                         |
+
+---
+
+### OGP 画像を作るときのコツ
+
+- SNS によって表示される画像のサイズが異なるため、見せたい部分が切れないよう注意
+  - 画像サイズを 1200px × 630px にする（Twitter の推奨サイズ）
+  - 余白を十分にとり、重要な要素（テキストなど）を中心に配置
+- [OGP 確認 | ラッコツールズ](https://rakko.tools/tools/9/)などの OGP チェッカーを使うと良い
+- Twitter の場合、一度 URL をツイートしてしまうと OGP がキャッシュされるため、変更が反映されないことがある
+  - ツイートの文を書いただけでキャッシュされる
+  - キャッシュされると約 1 週間は変更が反映されないので注意！
+- 画像の URL は絶対パスで指定する必要がある
+  - `<img>`タグの`src`属性のようにファイル名だけの指定はできない
+  - 画像が配置されるはずの URL を指定する
+  - images フォルダに`og-image.webp`という名前で画像を配置し Github Pages で公開する場合、`https://username.github.io/リポジトリ名/images/og-image.webp`と指定する
+
+---
+
+<!-- _class: lead -->
+
+## 02-5. アクセス解析の導入
+
+---
+
+### アクセス解析とは
+
+- Web サイトのアクセス状況を分析すること
+- ユーザー数、ページビュー数、滞在時間、リファラー（どのサイトから来たか）などを把握できる
+- Google Analytics が有名
+
+<div style="text-align: center;">
+
+![w:750px](./images/google-analytics.png)
+
+</div>
+
+---
+
+### Google Analytics の導入方法
+
+1. [Google Analytics](https://analytics.google.com/)にアクセス
