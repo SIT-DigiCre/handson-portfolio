@@ -9,13 +9,14 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 <!-- _class: invert -->
 
-# ポートフォリオサイトを作ろう
-
 # 2. 実践編
 
-Author: newt ( [@newt239](https://newt239.dev/) )
+<div style="text-align:right;position:fixed;bottom:3rem;right:3rem;">
+ポートフォリオサイトを作ろうハンズオン
 
-Last Edited: 2024/10/19
+newt ( [@newt239](https://newt239.dev/) ), 2024/10/19
+
+</div>
 
 ---
 
