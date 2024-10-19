@@ -228,12 +228,11 @@ Last Edited: 2024/10/19
 
 ---
 
-### 実装例：レスポンシブなナビゲーション
+### 実装例：レスポンシブなレイアウト
 
-- https://gist.github.com/newt239/7
--
+- https://gist.github.com/newt239/652a82904916f690b5b0095b03a1239b
 
-![bg right w:100%](./images/responsive-nav.png)
+![bg right h:100%](./images/responsive-layout.png)
 
 ---
 
