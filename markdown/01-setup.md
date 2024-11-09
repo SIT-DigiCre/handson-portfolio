@@ -146,7 +146,7 @@ git config --global user.email "ここにGitHubのメールアドレス"
 
 <!-- _class: lead -->
 
-## 1-2. 最低限必要な知識
+## 01-2. 最低限必要な知識
 
 ---
 
