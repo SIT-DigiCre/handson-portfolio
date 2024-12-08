@@ -14,7 +14,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 <div style="text-align:right;position:fixed;bottom:3rem;right:3rem;">
 ポートフォリオサイトを作ろうハンズオン
 
-2024-10-19 / [@newt239](https://newt239.dev/)
+2024-12-08 / [@newt239](https://newt239.dev/)
 
 </div>
 
@@ -331,7 +331,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 - 画像の URL は絶対パスで指定する必要がある
   - `<img>`タグの`src`属性のようにファイル名だけの指定はできない
   - 画像が配置されるはずの URL を指定する
-  - images フォルダに`og-image.webp`という名前で画像を配置し Github Pages で公開する場合、`https://username.github.io/リポジトリ名/images/og-image.webp`と指定する
+  - images フォルダに`og-image.webp`という名前で画像を配置し Github Pages で公開する場合、`https://ユーザー名.github.io/リポジトリ名/images/og-image.webp`と指定する
 
 ---
 
