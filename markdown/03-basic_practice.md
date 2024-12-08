@@ -100,7 +100,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 }
 ```
 
-- このあたりは良質な記事がたくさん出ているので、そちらを読んだほうが分かりやすいと思います
+- このあたりは良質な記事がたくさん出ているので、詳細な解説はそちらへ譲ります。
   - [日本語対応！CSS Flexbox のチートシートを作ったので配布します | Web クリエイターボックス](https://www.webcreatorbox.com/tech/css-flexbox-cheat-sheet)
   - [Flexbox 入門 - 横並びを実現する定番の CSS - ICS MEDIA](https://ics.media/entry/13117/)
 
