@@ -224,8 +224,8 @@ git config --global user.email "ここにGitHubのメールアドレス"
 - GitHub にログインし、右上の[「+」をクリック](https://github.com/new)して「New repository」を選択
 - Repository name にはお好きなものを
   - `https://username.github.io/[ここがリポジトリ名になる]/`
-- Public/Private は自由
-  - 認証情報を載せないよう注意！
+- Visibility は Public のまま
+  - 認証情報（シークレットキーや個人情報）を載せないよう注意！
 - Create repository をクリック
 - 作成後に遷移したページの URL をコピー
   - 4 枚後のスライドで使います
