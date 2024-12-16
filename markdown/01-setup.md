@@ -290,9 +290,9 @@ git config --global user.email "ここにGitHubのメールアドレス"
 
 ```bash
 git init
+git remote add origin さっきコピーしたURL
 git add .
 git commit -m "first commit"
-git remote add origin さっきコピーしたURL
 git push origin main
 ```
 

@@ -572,6 +572,23 @@ h1 {
 
 ---
 
+### ここまでの変更を GitHub Pages に反映
+
+- VSCode 左上のメニューから「ターミナル」→「新しいターミナル」を選択
+- 以下のコマンドを入力
+
+```bash
+git add .
+git commit -m "first commit"
+git push origin main
+```
+
+- コマンドは 1 行ずつコピーして貼り付け、実行（Enter）
+- 最後のコマンドに失敗する場合、`main`を`master`に変更
+- 今後の変更も同様の手順で反映できる
+
+---
+
 <!-- _class: lead -->
 
 ## 02-3. Q&A
@@ -595,7 +612,7 @@ Google や Bing などの検索エンジンは、Web ページの構造を理解
 `body`要素に対して`font-size:16px`を指定したうえで、他の要素に対しては`rem`を使って相対的なサイズを指定するのが一般的です。
 
 ```css
-body {
+html {
   font-size: 16px;
 }
 h1 {
