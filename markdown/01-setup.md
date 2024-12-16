@@ -14,7 +14,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 <div style="text-align:right;position:fixed;bottom:3rem;right:3rem;">
 ポートフォリオサイトを作ろうハンズオン
 
-2024-12-08 / [@newt239](https://newt239.dev/)
+2024-12-16 / [@newt239](https://newt239.dev/)
 
 </div>
 
