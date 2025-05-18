@@ -1,0 +1,94 @@
+h2 {
+  margin-top: 40px;
+}
+
+/* デザイン1: 下線付き見出し */
+.heading-underline {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.heading-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #3498db, #2ecc71);
+}
+
+/* デザイン2: サイドバー付き見出し */
+.heading-sidebar {
+  position: relative;
+  padding-left: 20px;
+}
+
+.heading-sidebar::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background-color: #e74c3c;
+}
+
+/* デザイン3: 背景付き見出し */
+.heading-background {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.heading-background::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f1c40f;
+  z-index: -1;
+  transform: skew(-5deg);
+}
+
+/* デザイン4: 二重線付き見出し */
+.heading-double-line {
+  position: relative;
+  padding: 10px 0;
+}
+
+.heading-double-line::before,
+.heading-double-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #9b59b6;
+}
+
+.heading-double-line::before {
+  top: 0;
+}
+
+.heading-double-line::after {
+  bottom: 0;
+}
+
+/* デザイン5: 角アイコン付き見出し */
+.heading-corner-icon {
+  position: relative;
+  padding-left: 30px;
+}
+
+.heading-corner-icon::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1abc9c;
+  font-size: 1.2em;
+}

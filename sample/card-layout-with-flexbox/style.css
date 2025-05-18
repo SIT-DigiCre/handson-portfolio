@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px;
+  background-color: #4a4a4a;
+  color: white;
+}
+
+.card-image {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.card-description {
+  padding: 1rem;
+}
