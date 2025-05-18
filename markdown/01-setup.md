@@ -14,7 +14,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 <div style="text-align:right;position:fixed;bottom:3rem;right:3rem;">
 ポートフォリオサイトを作ろうハンズオン
 
-2024-12-16 / [@newt239](https://newt239.dev/)
+[@newt239](https://newt239.dev/)
 
 </div>
 
@@ -156,7 +156,7 @@ ChatGPT や GitHub Copilot などの生成 AI を活用するのも良いでし�
 
 - スタートメニュー(左下 Windows アイコン)から Git Bash を起動
   - Mac の場合は「アプリケーション」の「ユーティリティ」フォルダにあるターミナルを起動
-- 下記のコマンドを入力して、ユーザ名とメールアドレスを設定
+- 下記のコマンドを入力して、ユーザー名とメールアドレスを設定
 
 ```bash
 git config --global user.name "ここにGitHubのユーザ名"
@@ -222,13 +222,13 @@ git config --global user.email "ここにGitHubのメールアドレス"
 ### GitHub でリポジトリを作成する
 
 - GitHub にログインし、右上の[「+」をクリック](https://github.com/new)して「New repository」を選択
-- Repository name にはお好きなものを
-  - `https://username.github.io/[ここがリポジトリ名になる]/`
+- Repository name は `<username>.github.io` とする
+  - `<username>` は GitHub のユーザ名に変更してください
 - Visibility は Public のまま
   - 認証情報（シークレットキーや個人情報）を載せないよう注意！
 - Create repository をクリック
 - 作成後に遷移したページの URL をコピー
-  - 4 枚後のスライドで使います
+  - 次のページで使います
 
 ![bg right fit](./images/github-new-repository.png)
 
@@ -236,13 +236,16 @@ git config --global user.email "ここにGitHubのメールアドレス"
 
 ### HTML ファイルを作成してみよう
 
-1. パソコン上で作業用のフォルダ（`portfolio`など）を作成
-1. VSCode を起動し、左上の「ファイル」→「フォルダを開く」から作成したフォルダを開く
-1. 新しいファイルを作成（右図の赤丸）
-1. ファイル名を`index.html`として Enter
+1. VSCode を起動し、左上の「ファイル」→「フォルダを開く」から「ドキュメント」フォルダを開く
+1. 「表示」→「ターミナル」を開く
+1. 下のコマンドを入力し、Enter
 
-- フォルダ作成ボタンと間違えないように注意
-- もしくは左上の「ファイル」→「新しいファイル」
+```bash
+git clone <先ほどコピーしたURL>
+```
+
+1. 左側「エクスプローラー」タブの上で右クリックし、「新しいファイル」
+1. ファイル名を`index.html`として Enter
 
 ![bg right fit](./images/vscode-welcome.png)
 
@@ -250,7 +253,7 @@ git config --global user.email "ここにGitHubのメールアドレス"
 
 ### HTML をブラウザで表示してみよう
 
-- 作成した HTML ファイルに先ほどのコードを書き込む（コピー推奨）
+- 作成した HTML ファイルに先ほどのコードを書き込む（コピペ推奨）
 
 ```html
 <!DOCTYPE html>
@@ -267,7 +270,7 @@ git config --global user.email "ここにGitHubのメールアドレス"
 ```
 
 - ファイルを保存し、VSCode 右下の「Go Live」をクリック
-  - エクスプローラーから HTML ファイルをダブルクリックすることでも表示できますが、この方法を用いることでリアルタイムで（再読込することなく）変更を確認できます
+  - エクスプローラーから HTML ファイルをダブルクリックすることでも表示できますが、この方法を用いることでリアルタイムで（再起動することなく）変更を確認できます
 
 ---
 
