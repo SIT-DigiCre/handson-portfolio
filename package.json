@@ -1,0 +1,11 @@
+{
+  "name": "handson-portfolio",
+  "version": "1.0.0",
+  "dependencies": {
+    "textlint": "^14.7.1",
+    "textlint-rule-no-dropping-the-ra": "^3.0.0"
+  },
+  "scripts": {
+    "lint": "textlint '**/*.md'"
+  }
+}
