@@ -109,10 +109,10 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 コード量が多いので、以降ソースコードは Gist で公開します。
 
-- https://gist.github.com/newt239/82bccbf2234114c8f65f69d1f3a6a206
-- `overflow: hidden;`（[12 行目](https://gist.github.com/newt239/82bccbf2234114c8f65f69d1f3a6a206#file-style-css-L12)）
+- https://github.com/SIT-DigiCre/handson-portfolio/tree/main/sample/card-layout-with-flexbox
+- `overflow: hidden;`（[12 行目](https://github.com/SIT-DigiCre/handson-portfolio/blob/main/sample/card-layout-with-flexbox/style.css#L12)）
   - 要素の内容がはみ出たときに、はみ出た部分を非表示にする
-- `object-fit: cover;`（[29 行目](https://gist.github.com/newt239/82bccbf2234114c8f65f69d1f3a6a206#file-style-css-L29)）
+- `object-fit: cover;`（[29 行目](https://github.com/SIT-DigiCre/handson-portfolio/blob/main/sample/card-layout-with-flexbox/style.css#L29)）
   - 画像のアスペクト比を保ったまま、要素に収まるように拡大・縮小
 
 ![bg right w:100%](./images/flexbox-card.png)
@@ -137,21 +137,21 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 ![bg right w:100%](./images/heading-sample.png)
 
-- https://gist.github.com/newt239/a4ad4b5565e46a2c7ef8416a0377bd47
+- https://github.com/SIT-DigiCre/handson-portfolio/tree/main/sample/position-property
 - `transform`プロパティ
   - `rotate`で要素を回転
-  - `translate`で要素を移動（[91 行目](https://gist.github.com/newt239/a4ad4b5565e46a2c7ef8416a0377bd47#file-style-css-L91)）
+  - `translate`で要素を移動（[91 行目](https://github.com/SIT-DigiCre/handson-portfolio/blob/main/sample/position-property/style.css#L91)）
   - `scale`で要素を拡大・縮小
-  - `skew`で要素を傾ける（[53 行目](https://gist.github.com/newt239/a4ad4b5565e46a2c7ef8416a0377bd47#file-style-css-L53)）
+  - `skew`で要素を傾ける（[53 行目](https://github.com/SIT-DigiCre/handson-portfolio/blob/main/sample/position-property/style.css#L53)）
 
 ---
 
 ### 実装例：固定されたヘッダー
 
-- https://gist.github.com/newt239/b7576ef08e2770392d94fbb437836630
-- ページ内リンク（[HTML 17 行目](https://gist.github.com/newt239/b7576ef08e2770392d94fbb437836630#file-index-html-L17)）
+- https://github.com/SIT-DigiCre/handson-portfolio/tree/main/sample/fixed-header
+- ページ内リンク（[HTML 17 行目](https://github.com/SIT-DigiCre/handson-portfolio/blob/main/sample/fixed-header/index.html#L17)）
   - a タグで id を指定した要素に飛ぶ
-- ページ内リンクのスクロール方法（[1 行目](https://gist.github.com/newt239/b7576ef08e2770392d94fbb437836630#file-style-css-L1)）
+- ページ内リンクのスクロール方法（[1 行目](https://github.com/SIT-DigiCre/handson-portfolio/blob/main/sample/fixed-header/style.css#L1)）
   - `scroll-behavior: smooth;`でスクロールを滑らかにする
   - `scroll-margin-top`でスクロール位置を調整（ヘッダーの高さ分ずらす）
 - `z-index`プロパティ（[20 行目](https://gist.github.com/newt239/b7576ef08e2770392d94fbb437836630#file-style-css-L20)）
@@ -230,7 +230,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 ### 実装例：レスポンシブなレイアウト
 
-- https://gist.github.com/newt239/652a82904916f690b5b0095b03a1239b
+- https://github.com/SIT-DigiCre/handson-portfolio/tree/main/sample/responsive-layout
 
 ![bg right h:100%](./images/responsive-layout.png)
 
