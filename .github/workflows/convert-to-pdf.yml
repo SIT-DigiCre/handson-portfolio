@@ -1,0 +1,38 @@
+name: Convert Markdown to PDF and Create Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  convert-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          npm install -g @marp-team/marp-cli
+
+      - name: Convert Markdown to PDF
+        run: |
+          mkdir -p pdfs
+          for file in markdown/*.md; do
+            filename=$(basename "$file" .md)
+            marp "$file" --pdf --allow-local-files -o "pdfs/${filename}.pdf"
+          done
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            pdfs/*.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
