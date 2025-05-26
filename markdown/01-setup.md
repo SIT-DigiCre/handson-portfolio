@@ -64,7 +64,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 - [MDN Web Docs](https://developer.mozilla.org/ja/)
 - [HTML&CSS 入門：イチから Web デザインを習得する講座](https://saruwakakun.com/html-css/basic)
 
-ChatGPT や GitHub Copilot などの生成 AI を活用するのも良いでしょう。
+ChatGPT や Gemini, Cursor などの生成 AI を活用するのも良いでしょう。
 
 ---
 
@@ -107,7 +107,7 @@ ChatGPT や GitHub Copilot などの生成 AI を活用するのも良いでし�
 
 ---
 
-### 環境構築
+### Git/GitHub のセットアップ
 
 https://prog-8.com/docs/git-env-win
 
