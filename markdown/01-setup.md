@@ -64,7 +64,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 - [MDN Web Docs](https://developer.mozilla.org/ja/)
 - [HTML&CSS 入門：イチから Web デザインを習得する講座](https://saruwakakun.com/html-css/basic)
 
-ChatGPT や GitHub Copilot などの生成 AI を活用するのも良いでしょう。
+ChatGPT や Gemini, Cursor などの生成 AI を活用するのも良いでしょう。
 
 ---
 
@@ -107,66 +107,18 @@ ChatGPT や GitHub Copilot などの生成 AI を活用するのも良いでし�
 
 ---
 
-### GitHub アカウントの作成
+### Git/GitHub のセットアップ
 
-1. [GitHub](https://github.com/) にアクセス
-1. 右上の`Sign up` をクリック
-1. メールアドレス、パスワード、ユーザ名を設定
-1. bot テストのミニゲームをクリア
-1. メールで送られた認証コードを入力
-1. プランは Free を選択
+https://prog-8.com/docs/git-env-win
 
+- Progate のガイドを参考に進めて下さい
 - メールアドレスは個人のものを推奨
-- ユーザ名は他人と被っている場合利用できません
-
-![bg right fit](./images/register-github.png)
-
----
-
-### Git のダウンロード
-
-#### Windows の場合
-
-1. [Git for Windows](https://gitforwindows.org/) にアクセス
-1. **Click here to download** をクリック
 
 #### Mac の場合
 
 1. [XCode](https://developer.apple.com/xcode/)にアクセス
 1. 右上の Download をクリック
 1. App Store が開くので、 XCode をインストール
-
-![bg right fit](./images/git-download-windows.png)
-
----
-
-### Git のインストール
-
-#### Windows の場合
-
-1. ダウンロードフォルダにある exe ファイルをダブルクリック
-1. ウィザードが立ち上がるので、基本的に右下の「Next」をクリックし続ける
-1. 「Choosing the default editor used by Git」画面で、Use Visual Studio Code as Git's default editor を指定する
-
-![bg right fit](./images/git-installer-windows.jpeg)
-
----
-
-### Git の設定
-
-- スタートメニュー(左下 Windows アイコン)から Git Bash を起動
-  - Mac の場合は「アプリケーション」の「ユーティリティ」フォルダにあるターミナルを起動
-- 下記のコマンドを入力して、ユーザー名とメールアドレスを設定
-
-```bash
-git config --global user.name "ここにGitHubのユーザ名"
-```
-
-```bash
-git config --global user.email "ここにGitHubのメールアドレス"
-```
-
-- 特にエラーが出ていなければ設定完了
 
 ---
 
