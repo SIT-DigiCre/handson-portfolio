@@ -6,7 +6,6 @@
  */
 
 @import 'default';
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
 
 :root {
   --text-main-color: #404040;
@@ -16,7 +15,7 @@
 }
 
 section {
-  font-family: "HiraginoSans-W4", "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   color: var(--text-main-color);
   background-color: var(--bg-main-color);
   font-size: 24px;
