@@ -35,7 +35,7 @@ jobs:
           mkdir -p pdfs
           for file in markdown/*.md; do
             filename=$(basename "$file" .md)
-            marp "$file" --pdf --allow-local-files -o "pdfs/${filename}.pdf"
+            marp "$file" --pdf --allow-local-files --theme markdown/theme.css -o "pdfs/${filename}.pdf"
           done
 
       - name: Create Release
