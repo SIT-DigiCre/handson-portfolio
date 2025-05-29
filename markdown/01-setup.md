@@ -111,7 +111,7 @@ ChatGPT や Gemini, Cursor などの生成 AI を活用するのも良いでし�
 
 https://prog-8.com/docs/git-env-win
 
-- Progate のガイドを参考に進めて下さい
+- 上記リンク先のガイドを参考に進めて下さい(5 までで OK)
 - メールアドレスは個人のものを推奨
 
 #### Mac の場合
@@ -174,8 +174,8 @@ https://prog-8.com/docs/git-env-win
 ### GitHub でリポジトリを作成する
 
 - GitHub にログインし、右上の[「+」をクリック](https://github.com/new)して「New repository」を選択
-- Repository name は `<username>.github.io` とする
-  - `<username>` は GitHub のユーザ名に変更してください
+- Repository name は `あなたのユーザ名.github.io` とする
+  - `あなたのユーザ名` は GitHub のユーザ名に変更してください
 - Visibility は Public のまま
   - 認証情報（シークレットキーや個人情報）を載せないよう注意！
 - Create repository をクリック
@@ -186,16 +186,21 @@ https://prog-8.com/docs/git-env-win
 
 ---
 
-### HTML ファイルを作成してみよう
+### リポジトリをクローンしよう
 
 1. VSCode を起動し、左上の「ファイル」→「フォルダを開く」から「ドキュメント」フォルダを開く
 1. 「表示」→「ターミナル」を開く
 1. 下のコマンドを入力し、Enter
 
 ```bash
-git clone <先ほどコピーしたURL>
+git clone 先ほどコピーしたURL
 ```
 
+---
+
+### HTML ファイルを作成してみよう
+
+1. VSCode を起動した状態で再度「フォルダを開く」を選び、「ドキュメント」フォルダ以下に新しくできた「あなたのユーザ名.github.io」フォルダを開く
 1. 左側「エクスプローラー」タブの上で右クリックし、「新しいファイル」
 1. ファイル名を`index.html`として Enter
 
@@ -244,10 +249,14 @@ git clone <先ほどコピーしたURL>
 - 以下のコマンドを入力
 
 ```bash
-git init
-git remote add origin さっきコピーしたURL
 git add .
+```
+
+```bash
 git commit -m "first commit"
+```
+
+```bash
 git push origin main
 ```
 
