@@ -47,8 +47,8 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 ### flexbox とは
 
-<div style="display: flex; padding-top: 1rem; gap: 1rem;">
-<div style="width: 50%">
+<div class="columns">
+<div>
 
 ```html
 <div class="container">
@@ -71,7 +71,7 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 ```
 
 </div>
-<div style="width: 50%">
+<div>
 
 - 要素の配置を柔軟に行うためのレイアウトモデル
 - 横並べ、縦並べ、折り返し、均等配置などを簡単に実現できる
