@@ -182,8 +182,8 @@ footer: "ポートフォリオサイトを作ろうハンズオン by newt239"
 
 - `index.html`の`body`タグ内に以下のコードを追加
 
-<div style="display: flex;">
-<div style="width: 50%">
+<div class="columns">
+<div>
 
 ```html
 <table>
@@ -281,8 +281,8 @@ p {
 
 - `style.css`というファイルを作成
 
-<div style="display: flex; gap: 2rem;">
-<div style="width: 50%">
+<div class="columns">
+<div>
 
 - `index.html`を以下のようにする
 
@@ -402,8 +402,8 @@ h1 {
 <div>一つ後の要素</div>
 ```
 
-<div style="display: flex; justify-content: space-between;">
-<div style="width: 30%">
+<div class="columns">
+<div>
 
 - 何も指定しないとき
 
@@ -418,7 +418,7 @@ h1 {
 ![](./images/no-padding-margin.png)
 
 </div>
-<div style="width: 30%">
+<div>
 
 - padding だけ指定したとき
 
@@ -512,8 +512,8 @@ https://materialui.co/colors
 - メリットとしては HTML を変えることなく装飾を加えることができる
 - 実際には`content`の値を空にして、`<div>`タグのように装飾することが多い
 
-<div style="display: flex; justify-content: space-between;">
-<div style="width: 60%; margin-top: 2rem;">
+<div class="columns">
+<div>
 
 ```html
 <div class="target">要素</div>
@@ -541,8 +541,8 @@ https://materialui.co/colors
 
 ### 実例: 見出しのデザイン
 
-<div style="display: flex; justify-content: space-between; margin-top: 1rem;">
-<div style="width:68%;">
+<div class="columns">
+<div>
 
 ```css
 h1 {
@@ -556,19 +556,19 @@ h1 {
 }
 ```
 
-</div>
-<div style="width: 30%;">
-
-![](./images/css-example.png)
-
-</div>
-</div>
-
 - `text-align: center`で中央揃え
 - `linear-gradient`でグラデーションを作成
   - 角度、起点の色、終点の色を指定
   - 詳細は[linear-gradient() - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/gradient/linear-gradient)を参照
 - `border-radius`で角を丸く
+
+</div>
+<div>
+
+![](./images/css-example.png)
+
+</div>
+</div>
 
 ---
 
